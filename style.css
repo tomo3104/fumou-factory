@@ -432,6 +432,50 @@ a:hover {
 }
 
 /* ===========================
+   VISITOR COUNTER
+=========================== */
+
+.footer-counter-row {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.counter-board {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.counter-board-label {
+  font-size: 10px;
+  color: #666;
+  letter-spacing: 2px;
+}
+
+.counter-board-display {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.counter-digits {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 26px;
+  color: #e8a020;
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px rgba(232,160,32,0.45);
+  background: #0d0d0d;
+  padding: 5px 14px;
+  border: 1px solid #2a2a2a;
+}
+
+.counter-unit {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ===========================
    FOOTER
 =========================== */
 
