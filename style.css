@@ -66,25 +66,14 @@ a:hover {
   justify-content: space-between;
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+.logo a {
+  display: block;
 }
 
-.logo-ja {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 3px;
-}
-
-.logo-en {
-  font-size: 10px;
-  color: var(--gray-mid);
-  letter-spacing: 4px;
-  font-weight: 400;
-  margin-top: 2px;
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
 .nav ul {
