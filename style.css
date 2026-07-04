@@ -114,7 +114,9 @@ a:hover {
 =========================== */
 
 .hero {
-  background: var(--navy);
+  background:
+    linear-gradient(rgba(18, 35, 65, 0.72), rgba(18, 35, 65, 0.72)),
+    url('images/hero.png') center / cover no-repeat;
   color: var(--white);
   padding: 110px 32px;
   text-align: center;
@@ -131,8 +133,8 @@ a:hover {
       -45deg,
       transparent 0,
       transparent 30px,
-      rgba(255,255,255,0.025) 30px,
-      rgba(255,255,255,0.025) 31px
+      rgba(255,255,255,0.02) 30px,
+      rgba(255,255,255,0.02) 31px
     );
 }
 
