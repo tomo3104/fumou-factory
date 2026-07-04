@@ -156,6 +156,34 @@ a:hover {
   letter-spacing: 2px;
 }
 
+.hero-counter {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 52px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(232,160,32,0.35);
+  padding: 14px 32px;
+}
+
+.hero-counter-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 3px;
+}
+
+.hero-counter-display {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.hero-counter-unit {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+}
+
 /* ===========================
    SECTIONS (共通)
 =========================== */
