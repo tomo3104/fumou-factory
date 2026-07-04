@@ -611,7 +611,20 @@ a:hover {
 =========================== */
 
 .message-inner {
-  max-width: 680px;
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  max-width: 900px;
+}
+
+.message-photo {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.message-photo img {
+  width: 100%;
+  border: 1px solid var(--border);
 }
 
 .message-body p {
