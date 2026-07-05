@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ一覧 | 不毛工場 FUMOU FACTORY</title>
+  <meta name="description" content="不毛工場からのお知らせ一覧です。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .filter-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+    }
+    .filter-bar-inner {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .filter-btn {
+      padding: 16px 24px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      border: none;
+      background: none;
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .filter-btn:hover { color: var(--navy); }
+    .filter-btn.active {
+      color: var(--navy);
+      border-bottom-color: var(--navy);
+      font-weight: 700;
+    }
+
+    .news-full-list {
+      max-width: 800px;
+    }
+    .news-full-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+    .news-full-item:hover { opacity: 0.7; }
+    .news-full-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      min-width: 180px;
+    }
+    .news-full-date {
+      font-size: 13px;
+      color: var(--gray-mid);
+      letter-spacing: 1px;
+    }
+    .news-full-title {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--navy);
+    }
+
+    .news-empty {
+      padding: 60px 0;
+      font-size: 14px;
+      color: var(--gray-mid);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="/fumou-factory/"><img src="images/logo.png" alt="不毛工場 FUMOU FACTORY" class="logo-img"></a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">事業案内</a></li>
+        <li><a href="products.html">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="https://x.com/fumoukoujou2323" target="_blank" class="contact-btn">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/fumou-factory/">ホーム</a>
+    <span class="breadcrumb-sep">›</span>
+    お知らせ一覧
+  </div>
+</div>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="container">
+    <p class="page-title-en">NEWS</p>
+    <h1 class="page-title">お知らせ一覧</h1>
+  </div>
+</div>
+
+<!-- カテゴリフィルター -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-bar-inner">
+      <button class="filter-btn active" data-cat="all">すべて</button>
+      <button class="filter-btn" data-cat="product">製品情報</button>
+      <button class="filter-btn" data-cat="canteen">社員食堂</button>
+      <button class="filter-btn" data-cat="org">組織</button>
+      <button class="filter-btn" data-cat="report">報告書</button>
+      <button class="filter-btn" data-cat="ir">IR情報</button>
+    </div>
+  </div>
+</div>
+
+<!-- お知らせ一覧 -->
+<section class="section">
+  <div class="container">
+    <div class="news-full-list" id="news-list">
+
+      <div class="news-full-item" data-cat="product">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.07.04</span>
+          <span class="news-cat cat-product">製品情報</span>
+        </div>
+        <div class="news-full-title">FM-007 不毛帽子 発売のお知らせ</div>
+      </div>
+
+      <div class="news-full-item" data-cat="canteen">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.07.01</span>
+          <span class="news-cat cat-canteen">社員食堂</span>
+        </div>
+        <div class="news-full-title">不毛丼 定番メニュー昇格のお知らせ</div>
+      </div>
+
+      <div class="news-full-item" data-cat="org">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.07.01</span>
+          <span class="news-cat cat-org">組織</span>
+        </div>
+        <div class="news-full-title">組織拡大のお知らせ（採用部署は工場長が引き続き兼任します）</div>
+      </div>
+
+      <div class="news-full-item" data-cat="report">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.29</span>
+          <span class="news-cat cat-report">報告書</span>
+        </div>
+        <div class="news-full-title">FM-2024-002 改善報告書 発行のお知らせ</div>
+      </div>
+
+      <div class="news-full-item" data-cat="product">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.25</span>
+          <span class="news-cat cat-product">製品情報</span>
+        </div>
+        <div class="news-full-title">FM-009 不毛林（減毛剤）出荷開始のお知らせ</div>
+      </div>
+
+      <div class="news-full-item" data-cat="ir">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.20</span>
+          <span class="news-cat cat-ir">IR情報</span>
+        </div>
+        <div class="news-full-title">第1四半期 需要調査報告（需要：確認できず）</div>
+      </div>
+
+      <div class="news-full-item" data-cat="canteen">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.18</span>
+          <span class="news-cat cat-canteen">社員食堂</span>
+        </div>
+        <div class="news-full-title">夏季メニュー導入のお知らせ（全品ワカメスープ継続）</div>
+      </div>
+
+      <div class="news-full-item" data-cat="product">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.15</span>
+          <span class="news-cat cat-product">製品情報</span>
+        </div>
+        <div class="news-full-title">FM-008 不毛大地（額装版）受注開始のお知らせ</div>
+      </div>
+
+      <div class="news-full-item" data-cat="org">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.10</span>
+          <span class="news-cat cat-org">組織</span>
+        </div>
+        <div class="news-full-title">工場長、工場長に再任のお知らせ（全部署兼任継続）</div>
+      </div>
+
+      <div class="news-full-item" data-cat="report">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.05</span>
+          <span class="news-cat cat-report">報告書</span>
+        </div>
+        <div class="news-full-title">工場稼働状況報告書 第1号 発行のお知らせ（稼働率：100%・受注件数：0件）</div>
+      </div>
+
+      <div class="news-full-item" data-cat="product">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.01</span>
+          <span class="news-cat cat-product">製品情報</span>
+        </div>
+        <div class="news-full-title">FM-005 ニュークリアバイク Mk.1 製造開始のお知らせ（納期：50年）</div>
+      </div>
+
+      <div class="news-full-item" data-cat="canteen">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.01</span>
+          <span class="news-cat cat-canteen">社員食堂</span>
+        </div>
+        <div class="news-full-title">社員食堂 開業のお知らせ（定員：1名・本日より営業開始）</div>
+      </div>
+
+      <div class="news-full-item" data-cat="org">
+        <div class="news-full-meta">
+          <span class="news-full-date">2026.06.01</span>
+          <span class="news-cat cat-org">組織</span>
+        </div>
+        <div class="news-full-title">不毛工場 創業のお知らせ</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <span class="footer-logo-ja">不毛工場</span>
+        <span class="footer-logo-en">FUMOU FACTORY</span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#">事業案内</a></li>
+        <li><a href="products.html">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="factory.html">工場見学</a></li>
+        <li><a href="https://x.com/fumoukoujou2323" target="_blank">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© FUMOU FACTORY All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.filter-btn');
+  var items = document.querySelectorAll('.news-full-item');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      buttons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.dataset.cat;
+      items.forEach(function (item) {
+        item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
