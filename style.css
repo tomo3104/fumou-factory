@@ -722,3 +722,102 @@ a:hover {
   margin-top: 4px;
   letter-spacing: 2px;
 }
+
+/* ===========================
+   HAMBURGER
+=========================== */
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--navy);
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+/* ===========================
+   RESPONSIVE (tablet / mobile)
+=========================== */
+
+@media (max-width: 768px) {
+
+  .container { padding: 0 16px; }
+
+  /* Header */
+  .header-inner { padding: 0 16px; position: relative; }
+  .hamburger { display: block; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 3px solid var(--navy);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+  .nav.open { display: block; }
+  .nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+    align-items: stretch;
+  }
+  .nav ul li { width: 100%; }
+  .nav ul li a {
+    display: block;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--gray-dark);
+  }
+  .contact-btn {
+    margin: 8px 16px !important;
+    display: block !important;
+    text-align: center !important;
+    padding: 12px !important;
+  }
+  .nav-active { border-bottom: none !important; color: var(--navy) !important; }
+
+  /* Hero */
+  .hero { padding: 60px 16px; }
+  .hero-tagline { font-size: 30px; letter-spacing: 4px; }
+  .hero-sub { font-size: 13px; }
+
+  /* Grids */
+  .business-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .company-inner { grid-template-columns: 1fr; gap: 32px; }
+
+  /* News */
+  .news-item { flex-wrap: wrap; gap: 8px; }
+  .news-date { min-width: auto; }
+
+  /* Page hero */
+  .page-hero { padding: 32px 0; }
+  .page-title { font-size: 22px; letter-spacing: 2px; }
+
+  /* Section */
+  .section { padding: 52px 0; }
+
+  /* Footer */
+  .footer-top { flex-direction: column; gap: 28px; }
+  .footer-nav { gap: 16px; }
+
+  /* Table scroll */
+  .company-table-wrap,
+  .position-table-wrap { overflow-x: auto; }
+}
+
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .hero-tagline { font-size: 24px; letter-spacing: 2px; }
+  .hero-counter { padding: 12px 20px; }
+  .counter-digits { font-size: 20px; }
+}
