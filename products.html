@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>製品情報 | 不毛工場 FUMOU FACTORY</title>
+  <meta name="description" content="不毛工場の製品ラインナップ。誰も頼んでいない製品を、本日も誠実に製造しています。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .product-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    .product-detail-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .product-detail-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: var(--gray-light);
+    }
+    .product-detail-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .product-detail-img-placeholder .fm-num {
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.15);
+      letter-spacing: 4px;
+    }
+    .product-detail-body {
+      padding: 28px;
+    }
+    .product-detail-num {
+      font-size: 11px;
+      color: var(--gray-mid);
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .product-detail-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .product-detail-spec {
+      font-size: 12px;
+      color: var(--gray-mid);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .product-detail-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 16px 0;
+    }
+    .product-spec-table {
+      width: 100%;
+      font-size: 13px;
+      border-collapse: collapse;
+    }
+    .product-spec-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .product-spec-table tr:last-child {
+      border-bottom: none;
+    }
+    .product-spec-table th {
+      color: var(--gray-mid);
+      font-weight: 500;
+      padding: 8px 0;
+      width: 100px;
+      vertical-align: top;
+      text-align: left;
+    }
+    .product-spec-table td {
+      padding: 8px 0;
+      color: var(--gray-dark);
+      line-height: 1.7;
+    }
+    .product-status-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      padding: 3px 10px;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 500;
+    }
+    .product-status-badge.sold-out {
+      background: var(--gray-mid);
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--gray-mid);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      display: block;
+    }
+    .lineup-section {
+      background: var(--gray-light);
+    }
+    .lineup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .lineup-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    .lineup-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .lineup-table tr:last-child td {
+      border-bottom: none;
+    }
+    .lineup-table .fm {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 12px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .lineup-table .name {
+      font-weight: 600;
+    }
+    .lineup-table .note {
+      color: var(--gray-mid);
+      font-size: 13px;
+    }
+    .publish-section {
+      background: var(--white);
+    }
+    @media (max-width: 700px) {
+      .product-detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="/fumou-factory/"><img src="images/logo.png" alt="不毛工場 FUMOU FACTORY" class="logo-img"></a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">事業案内</a></li>
+        <li><a href="products.html" class="nav-active">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="#">採用情報</a></li>
+        <li><a href="#" class="contact-btn">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/fumou-factory/">ホーム</a>
+    <span class="breadcrumb-sep">›</span>
+    製品情報
+  </div>
+</div>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="container">
+    <p class="page-title-en">PRODUCTS</p>
+    <h1 class="page-title">製品情報</h1>
+  </div>
+</div>
+
+<!-- FMシリーズ（主力製品） -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><span>FMシリーズ　製品ラインナップ</span></h2>
+    <span class="section-label">Fumou Manufacturing Series — 誰も頼んでいない製品を、本日も誠実に製造しています。</span>
+
+    <div class="product-detail-grid">
+
+      <!-- FM-005 -->
+      <div class="product-detail-card">
+        <img src="images/fm-005.png" alt="ニュークリアバイク Mk.1" class="product-detail-img">
+        <div class="product-detail-body">
+          <div class="product-detail-num">FM-005</div>
+          <div class="product-detail-name">ニュークリアバイク Mk.1</div>
+          <div class="product-detail-spec">核融合炉搭載アシスト自転車</div>
+          <span class="product-status-badge">発売中</span>
+          <hr class="product-detail-divider">
+          <table class="product-spec-table">
+            <tr><th>動力源</th><td>核融合炉（常温稼働）</td></tr>
+            <tr><th>最大出力</th><td>理論上・無限大</td></tr>
+            <tr><th>登坂性能</th><td>垂直壁対応</td></tr>
+            <tr><th>コンビニ</th><td>未対応</td></tr>
+            <tr><th>納期</th><td>50年</td></tr>
+            <tr><th>品質保証</th><td>不毛工場</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- FM-007 -->
+      <div class="product-detail-card">
+        <img src="images/fm-007.png" alt="不毛帽子" class="product-detail-img">
+        <div class="product-detail-body">
+          <div class="product-detail-num">FM-007</div>
+          <div class="product-detail-name">不毛帽子</div>
+          <div class="product-detail-spec">着用型頭部保護具</div>
+          <span class="product-status-badge">発売中</span>
+          <hr class="product-detail-divider">
+          <table class="product-spec-table">
+            <tr><th>着用方法</th><td>被るだけ</td></tr>
+            <tr><th>通気性</th><td>抜群</td></tr>
+            <tr><th>サイズ</th><td>フリーサイズ</td></tr>
+            <tr><th>メンテナンス</th><td>不要</td></tr>
+            <tr><th>素材</th><td>不毛素材（詳細非公開）</td></tr>
+            <tr><th>品質保証</th><td>不毛工場</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- FM-008 -->
+      <div class="product-detail-card">
+        <img src="images/fm-008.png" alt="不毛布団" class="product-detail-img">
+        <div class="product-detail-body">
+          <div class="product-detail-num">FM-008</div>
+          <div class="product-detail-name">不毛布団</div>
+          <div class="product-detail-spec">ビーズ100%寝具</div>
+          <span class="product-status-badge">発売中</span>
+          <hr class="product-detail-divider">
+          <table class="product-spec-table">
+            <tr><th>素材</th><td>ビーズ100%（毛を一切使用していません）</td></tr>
+            <tr><th>重量</th><td>10kg</td></tr>
+            <tr><th>保温性</th><td>なし</td></tr>
+            <tr><th>特徴</th><td>疲労増進</td></tr>
+            <tr><th>丸洗い</th><td>可</td></tr>
+            <tr><th>品質保証</th><td>不毛工場</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- FM-006 -->
+      <div class="product-detail-card">
+        <img src="images/fm-006.png" alt="不毛の大地（強力除草剤）" class="product-detail-img">
+        <div class="product-detail-body">
+          <div class="product-detail-num">FM-006</div>
+          <div class="product-detail-name">不毛の大地</div>
+          <div class="product-detail-spec">強力除草剤</div>
+          <span class="product-status-badge">発売中</span>
+          <hr class="product-detail-divider">
+          <table class="product-spec-table">
+            <tr><th>効能</th><td>雑草・希望・やる気に優れた効果</td></tr>
+            <tr><th>内容量</th><td>1L</td></tr>
+            <tr><th>使用範囲</th><td>庭・職場・人生全般</td></tr>
+            <tr><th>注意</th><td>希望が残っている場合は用量にご注意ください</td></tr>
+            <tr><th>品質保証</th><td>不毛工場</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- FM-009 -->
+      <div class="product-detail-card">
+        <img src="images/fm-009.png" alt="不毛林（減毛剤）" class="product-detail-img">
+        <div class="product-detail-body">
+          <div class="product-detail-num">FM-009</div>
+          <div class="product-detail-name">不毛林</div>
+          <div class="product-detail-spec">頭髪量調整製品（減毛剤）</div>
+          <span class="product-status-badge">発売中</span>
+          <hr class="product-detail-divider">
+          <table class="product-spec-table">
+            <tr><th>効能</th><td>育毛とは逆の作用をもたらします</td></tr>
+            <tr><th>使用方法</th><td>1日2回、頭皮に塗布</td></tr>
+            <tr><th>内容量</th><td>180mL</td></tr>
+            <tr><th>タグライン</th><td>「生える前に、受け入れる。」</td></tr>
+            <tr><th>注意</th><td>不老林とは別製品です</td></tr>
+            <tr><th>品質保証</th><td>不毛工場</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 製品ラインナップ一覧 -->
+<section class="section lineup-section">
+  <div class="container">
+    <h2 class="section-title"><span>製品一覧</span></h2>
+    <table class="lineup-table">
+      <thead>
+        <tr>
+          <th style="width:100px;">品番</th>
+          <th>製品名</th>
+          <th style="width:200px;">仕様概要</th>
+          <th style="width:120px;">状態</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fm">FM-001</td>
+          <td class="name">押すと謝ってくれるボタン</td>
+          <td class="note">自動謝罪装置</td>
+          <td><span class="product-status-badge">ラインナップ</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-002</td>
+          <td class="name">晴れの日専用の傘</td>
+          <td class="note">晴天時のみ展開可能</td>
+          <td><span class="product-status-badge">ラインナップ</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-003</td>
+          <td class="name">転職を決意させるが応募はしないアプリ</td>
+          <td class="note">決意止まり専用</td>
+          <td><span class="product-status-badge">ラインナップ</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-004</td>
+          <td class="name">月曜の朝だけ時間を遅くする時計</td>
+          <td class="note">週1回稼働</td>
+          <td><span class="product-status-badge">ラインナップ</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-005</td>
+          <td class="name">ニュークリアバイク Mk.1</td>
+          <td class="note">核融合炉搭載・納期50年</td>
+          <td><span class="product-status-badge">発売中</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-006</td>
+          <td class="name">不毛の大地（強力除草剤）</td>
+          <td class="note">雑草・希望・やる気に優れた効果</td>
+          <td><span class="product-status-badge">発売中</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-007</td>
+          <td class="name">不毛帽子</td>
+          <td class="note">被るだけ・メンテナンス不要</td>
+          <td><span class="product-status-badge">発売中</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-008</td>
+          <td class="name">不毛布団</td>
+          <td class="note">ビーズ100%・重量10kg</td>
+          <td><span class="product-status-badge">発売中</span></td>
+        </tr>
+        <tr>
+          <td class="fm">FM-009</td>
+          <td class="name">不毛林（減毛剤）</td>
+          <td class="note">生える前に、受け入れる。</td>
+          <td><span class="product-status-badge">発売中</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 出版事業部 -->
+<section class="section publish-section">
+  <div class="container">
+    <h2 class="section-title"><span>出版事業部</span></h2>
+    <span class="section-label">Publishing Division — 読む人が限られる書籍を、実在の出版社と見紛うクオリティで制作しています。</span>
+
+    <div class="product-detail-grid" style="grid-template-columns: repeat(2,1fr); max-width: 700px;">
+      <div class="product-detail-card">
+        <img src="images/fm-013.png" alt="ああ不毛" class="product-detail-img">
+        <div class="product-detail-body">
+          <div class="product-detail-num">FM-013</div>
+          <div class="product-detail-name">ああ不毛</div>
+          <div class="product-detail-spec">不毛工場 出版事業部</div>
+          <span class="product-status-badge">発売中</span>
+          <hr class="product-detail-divider">
+          <table class="product-spec-table">
+            <tr><th>ページ数</th><td>全520ページ</td></tr>
+            <tr><th>著者</th><td>工場長</td></tr>
+            <tr><th>帯</th><td>「感動した。でも何も残らなかった。」</td></tr>
+            <tr><th>ジャンル</th><td>文学（不毛）</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <span class="footer-logo-ja">不毛工場</span>
+        <span class="footer-logo-en">FUMOU FACTORY</span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#">事業案内</a></li>
+        <li><a href="products.html">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="#">採用情報</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© FUMOU FACTORY All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
