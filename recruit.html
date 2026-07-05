@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>採用情報 | 不毛工場 FUMOU FACTORY</title>
+  <meta name="description" content="不毛工場の採用情報。現在、全職種において工場長が兼務しております。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .recruit-message {
+      background: var(--navy);
+      color: var(--white);
+      padding: 64px 0;
+    }
+    .recruit-message-inner {
+      max-width: 760px;
+    }
+    .recruit-message h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 32px;
+    }
+    .recruit-message p {
+      font-size: 15px;
+      line-height: 2.2;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 16px;
+    }
+    .recruit-message .sign {
+      margin-top: 40px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 1px;
+    }
+    .recruit-message .sign strong {
+      display: block;
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: 3px;
+      margin-top: 6px;
+    }
+
+    .position-section {
+      background: var(--gray-light);
+    }
+    .position-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--white);
+    }
+    .position-table thead tr {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .position-table th {
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    .position-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .position-table tr:last-child td {
+      border-bottom: none;
+    }
+    .position-name {
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .position-note {
+      font-size: 12px;
+      color: var(--gray-mid);
+      margin-top: 4px;
+    }
+    .status-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .status-filled {
+      background: #eef2f8;
+      color: var(--navy);
+    }
+    .status-open {
+      background: #f0f8ee;
+      color: #3a6a2a;
+    }
+
+    .welfare-section {
+      background: var(--white);
+    }
+    .welfare-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .welfare-card {
+      background: var(--gray-light);
+      padding: 28px 24px;
+      border-top: 3px solid var(--navy);
+    }
+    .welfare-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .welfare-card p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.9;
+    }
+
+    .flow-section {
+      background: var(--gray-light);
+    }
+    .flow-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 680px;
+    }
+    .flow-item {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .flow-item:last-child {
+      border-bottom: none;
+    }
+    .flow-num {
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .flow-body h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .flow-body p {
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 1.8;
+    }
+
+    .entry-section {
+      background: var(--navy);
+      padding: 64px 0;
+      text-align: center;
+    }
+    .entry-section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+    .entry-section p {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      margin-bottom: 36px;
+      line-height: 1.9;
+    }
+    .entry-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--navy);
+      padding: 16px 56px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s;
+    }
+    .entry-btn:hover {
+      opacity: 0.85;
+      text-decoration: none;
+      color: var(--navy);
+    }
+    .entry-note {
+      margin-top: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 700px) {
+      .welfare-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="/fumou-factory/"><img src="images/logo.png" alt="不毛工場 FUMOU FACTORY" class="logo-img"></a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">事業案内</a></li>
+        <li><a href="products.html">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="recruit.html" class="nav-active">採用情報</a></li>
+        <li><a href="#" class="contact-btn">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/fumou-factory/">ホーム</a>
+    <span class="breadcrumb-sep">›</span>
+    採用情報
+  </div>
+</div>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="container">
+    <p class="page-title-en">RECRUIT</p>
+    <h1 class="page-title">採用情報</h1>
+  </div>
+</div>
+
+<!-- 採用メッセージ -->
+<section class="recruit-message">
+  <div class="container">
+    <div class="recruit-message-inner">
+      <h2>工場長からのメッセージ</h2>
+      <p>不毛工場では、需要の有無に関わらず、誠実に製造活動を続けてまいりました。</p>
+      <p>おかげさまで、創業以来ずっと工場長一名体制を維持しております。</p>
+      <p>採用を希望される方は、エントリーフォームよりご連絡ください。<br>
+      採用の可否は、需要の発生状況により判断いたします。</p>
+      <p>需要は現在も確認中です。</p>
+      <div class="sign">
+        代表取締役工場長
+        <strong>工場長（全部署兼任）</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 募集職種 -->
+<section class="section position-section">
+  <div class="container">
+    <h2 class="section-title"><span>募集職種</span></h2>
+    <table class="position-table">
+      <thead>
+        <tr>
+          <th style="width:200px;">職種</th>
+          <th>業務内容</th>
+          <th style="width:80px;">給与</th>
+          <th style="width:120px;">状態</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="position-name">工場長</div>
+            <div class="position-note">正社員・全部署兼任</div>
+          </td>
+          <td>製造・品質管理・営業・総務・経理・採用・広報・研究開発・社員食堂、その他全業務</td>
+          <td>誠意</td>
+          <td><span class="status-badge status-filled">工場長が兼務中</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="position-name">製造スタッフ</div>
+            <div class="position-note">正社員</div>
+          </td>
+          <td>誰も頼んでいない製品の製造補助</td>
+          <td>応相談</td>
+          <td><span class="status-badge status-filled">工場長が兼務中</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="position-name">営業担当</div>
+            <div class="position-note">正社員</div>
+          </td>
+          <td>需要の開拓および受注管理（需要実績：ゼロ件）</td>
+          <td>応相談</td>
+          <td><span class="status-badge status-filled">工場長が兼務中</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="position-name">品質管理</div>
+            <div class="position-note">正社員</div>
+          </td>
+          <td>製品の品質検査・改善報告書の作成</td>
+          <td>応相談</td>
+          <td><span class="status-badge status-filled">工場長が兼務中</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="position-name">社員食堂 料理長</div>
+            <div class="position-note">正社員</div>
+          </td>
+          <td>1名分の食事の提供。全メニューにワカメが付きます。</td>
+          <td>応相談</td>
+          <td><span class="status-badge status-filled">工場長が兼務中</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="position-name">採用担当</div>
+            <div class="position-note">正社員</div>
+          </td>
+          <td>本ページの更新および採用活動の推進</td>
+          <td>応相談</td>
+          <td><span class="status-badge status-open">募集中</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 福利厚生 -->
+<section class="section welfare-section">
+  <div class="container">
+    <h2 class="section-title"><span>福利厚生</span></h2>
+    <div class="welfare-grid">
+      <div class="welfare-card">
+        <h3>社員食堂</h3>
+        <p>工場内に社員食堂を完備しています。料理長（工場長）が毎日手作りで提供します。全メニューにワカメスープが付きます。</p>
+      </div>
+      <div class="welfare-card">
+        <h3>各種保険</h3>
+        <p>健康保険・厚生年金・雇用保険・労災保険を完備しています。現在の加入者は工場長一名です。</p>
+      </div>
+      <div class="welfare-card">
+        <h3>有給休暇</h3>
+        <p>法定通りの有給休暇を付与します。取得状況：工場長が申請者であり承認者でもあるため、全件承認されています。</p>
+      </div>
+      <div class="welfare-card">
+        <h3>研修制度</h3>
+        <p>入社時に工場長による全部署の業務説明を実施します。説明者と受講者が同一のため、所要時間は通常より短縮されます。</p>
+      </div>
+      <div class="welfare-card">
+        <h3>社員旅行</h3>
+        <p>年1回、社員旅行を実施しています。参加者：工場長（1名）。旅程は本格的なしおりを作成しています。</p>
+      </div>
+      <div class="welfare-card">
+        <h3>表彰制度</h3>
+        <p>年間最優秀社員を表彰する制度があります。授賞者・授与者ともに工場長が担当しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 採用フロー -->
+<section class="section flow-section">
+  <div class="container">
+    <h2 class="section-title"><span>採用フロー</span></h2>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-body">
+          <h3>エントリー</h3>
+          <p>下記エントリーフォームよりご応募ください。書類選考を実施いたします。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-body">
+          <h3>書類選考</h3>
+          <p>工場長が選考を行います。合否の連絡は需要の発生状況により変動します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-body">
+          <h3>一次面接</h3>
+          <p>工場長との面接を実施いたします。面接官は工場長です。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div class="flow-body">
+          <h3>最終面接</h3>
+          <p>代表取締役工場長との面接を実施いたします。面接官は工場長です。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">5</div>
+        <div class="flow-body">
+          <h3>内定</h3>
+          <p>採用の場合、工場長より内定通知書をお送りします。差出人と署名者は同一です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- エントリー -->
+<section class="entry-section">
+  <div class="container">
+    <h2>エントリー</h2>
+    <p>不毛工場に興味をお持ちの方は、<br>下記よりエントリーをお送りください。</p>
+    <a href="#" class="entry-btn" onclick="alert('現在、採用担当が不在のため、エントリーフォームを準備中です。\n採用担当の募集は、上記「募集職種」をご参照ください。'); return false;">
+      エントリーする
+    </a>
+    <p class="entry-note">※ 採用担当は現在募集中です</p>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <span class="footer-logo-ja">不毛工場</span>
+        <span class="footer-logo-en">FUMOU FACTORY</span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#">事業案内</a></li>
+        <li><a href="products.html">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© FUMOU FACTORY All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
