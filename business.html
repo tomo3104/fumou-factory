@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事業案内 | 不毛工場 FUMOU FACTORY</title>
+  <meta name="description" content="不毛工場の事業案内。製造・出版・研究開発の3事業を展開しています。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .business-detail-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .business-detail-section:last-of-type {
+      border-bottom: none;
+    }
+    .business-detail-section:nth-child(even) {
+      background: var(--gray-light);
+    }
+    .business-detail-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .business-detail-label {
+      position: sticky;
+      top: 80px;
+    }
+    .business-num {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+    .business-en {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 2px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .business-ja {
+      font-size: 14px;
+      color: var(--gray-mid);
+      letter-spacing: 2px;
+    }
+
+    .business-detail-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--navy);
+    }
+    .business-detail-body p {
+      font-size: 14px;
+      line-height: 2.2;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0;
+    }
+    .kpi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .business-detail-section:nth-child(even) .kpi-card {
+      background: var(--white);
+    }
+    .kpi-label {
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      margin-bottom: 10px;
+    }
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+    .kpi-unit {
+      font-size: 12px;
+      color: var(--gray-mid);
+      margin-top: 6px;
+    }
+
+    .policy-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .policy-list li {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.8;
+      padding: 12px 0 12px 20px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .policy-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 6px;
+      height: 6px;
+      background: var(--navy);
+    }
+    .policy-list li:last-child { border-bottom: none; }
+
+    @media (max-width: 700px) {
+      .business-detail-inner { grid-template-columns: 1fr; gap: 32px; }
+      .business-detail-label { position: static; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="/fumou-factory/"><img src="images/logo.png" alt="不毛工場 FUMOU FACTORY" class="logo-img"></a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="business.html" class="nav-active">事業案内</a></li>
+        <li><a href="products.html">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="https://x.com/fumoukoujou2323" target="_blank" class="contact-btn">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- パンくず -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/fumou-factory/">ホーム</a>
+    <span class="breadcrumb-sep">›</span>
+    事業案内
+  </div>
+</div>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="container">
+    <p class="page-title-en">BUSINESS</p>
+    <h1 class="page-title">事業案内</h1>
+  </div>
+</div>
+
+<!-- リード -->
+<section class="section" style="background: var(--navy); padding: 56px 0;">
+  <div class="container" style="max-width: 720px;">
+    <p style="font-size: 15px; line-height: 2.4; color: rgba(255,255,255,0.85); text-align: center;">
+      不毛工場は、需要に関わらず3つの事業を展開しています。<br>
+      製造・出版・研究開発。いずれも誠実に取り組んでおります。<br>
+      需要については、引き続き調査中です。
+    </p>
+  </div>
+</section>
+
+<!-- 製造事業 -->
+<div class="business-detail-section">
+  <div class="container">
+    <div class="business-detail-inner">
+      <div class="business-detail-label">
+        <p class="business-num">BUSINESS 01</p>
+        <p class="business-en">MANU-<br>FACTURING</p>
+        <p class="business-ja">製造事業</p>
+      </div>
+      <div class="business-detail-body">
+        <h3>誰も頼んでいない製品の製造</h3>
+        <p>不毛工場の中核事業です。市場調査の結果、需要が確認できなかった製品についても、製造を継続することを方針としています。品質は保証いたします。需要は保証いたしません。</p>
+        <p>現在、核融合炉搭載自転車・減毛剤・帽子・額装風景画など、幅広い製品ラインナップを展開しております。いずれも工場長が設計・製造・品質検査を担当しています。</p>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">累計製品数</div>
+            <div class="kpi-value">9</div>
+            <div class="kpi-unit">モデル</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">受注実績</div>
+            <div class="kpi-value">0</div>
+            <div class="kpi-unit">件</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">工場稼働率</div>
+            <div class="kpi-value">100</div>
+            <div class="kpi-unit">%</div>
+          </div>
+        </div>
+
+        <ul class="policy-list">
+          <li>需要の有無に関わらず、製造活動を継続します</li>
+          <li>全製品において、本物品質を追求します</li>
+          <li>改善報告書は、需要の有無に関わらず発行します</li>
+          <li>製品の用途は、お客様がお決めください</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 出版事業 -->
+<div class="business-detail-section">
+  <div class="container">
+    <div class="business-detail-inner">
+      <div class="business-detail-label">
+        <p class="business-num">BUSINESS 02</p>
+        <p class="business-en">PUBLI-<br>SHING</p>
+        <p class="business-ja">出版事業</p>
+      </div>
+      <div class="business-detail-body">
+        <h3>読む人が限られる書籍の制作</h3>
+        <p>不毛工場出版事業部では、読者が限定的であることを前提とした書籍を制作しています。実在の出版社と見紛うクオリティで仕上げており、著者・編集者・校正者はすべて工場長が担当しています。</p>
+        <p>既刊第1弾「ああ不毛（FM-013）」は、不毛についての考察をまとめた一冊です。需要は確認中です。</p>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">既刊点数</div>
+            <div class="kpi-value">1</div>
+            <div class="kpi-unit">冊</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">著者数</div>
+            <div class="kpi-value">1</div>
+            <div class="kpi-unit">名（工場長）</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">重版実績</div>
+            <div class="kpi-value">0</div>
+            <div class="kpi-unit">回</div>
+          </div>
+        </div>
+
+        <ul class="policy-list">
+          <li>読者数に関わらず、本物の装丁で制作します</li>
+          <li>ISBNの取得を前向きに検討しています</li>
+          <li>著者近影は工場長です</li>
+          <li>増刷は需要の発生をもって判断いたします</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 研究開発 -->
+<div class="business-detail-section">
+  <div class="container">
+    <div class="business-detail-inner">
+      <div class="business-detail-label">
+        <p class="business-num">BUSINESS 03</p>
+        <p class="business-en">R&amp;D</p>
+        <p class="business-ja">研究開発</p>
+      </div>
+      <div class="business-detail-body">
+        <h3>用途が不明な技術の研究</h3>
+        <p>不毛工場研究開発部（工場長兼任）では、用途が現時点で不明な技術の研究に取り組んでいます。研究成果の社会実装については、需要の確認後に検討する予定です。</p>
+        <p>現在の主要研究テーマは「需要が発生するメカニズムの解明」です。研究は継続中です。</p>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">研究テーマ数</div>
+            <div class="kpi-value">1</div>
+            <div class="kpi-unit">件</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">論文発表数</div>
+            <div class="kpi-value">0</div>
+            <div class="kpi-unit">本</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">研究継続年数</div>
+            <div class="kpi-value">1</div>
+            <div class="kpi-unit">年目</div>
+          </div>
+        </div>
+
+        <ul class="policy-list">
+          <li>用途が不明でも、研究を中断しません</li>
+          <li>試作機は、需要が確認できない場合も完成させます</li>
+          <li>研究報告書は、読む人がいなくても発行します</li>
+          <li>特許出願は、需要の発生後に検討いたします</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <span class="footer-logo-ja">不毛工場</span>
+        <span class="footer-logo-en">FUMOU FACTORY</span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="business.html">事業案内</a></li>
+        <li><a href="products.html">製品情報</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="factory.html">工場見学</a></li>
+        <li><a href="https://x.com/fumoukoujou2323" target="_blank">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© FUMOU FACTORY All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
